@@ -1,0 +1,138 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+.header-navbar {
+  @include md {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  &__btn {
+  width: 30px;
+  height: 22.5px;
+  position: relative;
+  margin: $gap 0;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  @include md-min {
+    display: none;
+  }
+
+  &-row {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background: $color-light;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+
+    &:nth-child(even) {
+      left: 50%;
+      border-radius: 0 3px 3px 0;
+    }
+    
+    &:nth-child(odd) {
+      left:0px;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    &:nth-child(1), &:nth-child(2) {
+      top: 0px;
+    }
+    
+    &:nth-child(3), &:nth-child(4) {
+      top: 9px;
+    }
+    
+    &:nth-child(5), &:nth-child(6) {
+      top: 18px;
+    }
+  }
+
+
+  &.active span:nth-child(1), &.active span:nth-child(6) {
+    transform: rotate(45deg);
+  }
+  
+  &.active span:nth-child(2), &.active span:nth-child(5) {
+    transform: rotate(-45deg);
+  }
+  
+  &.active span:nth-child(1) {
+    left: 2.5px;
+    top: 3.5px;
+  }
+  
+  &.active span:nth-child(2) {
+    left: calc(50% - 2.5px);
+    top: 3.5px;
+  }
+  
+  &.active span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+  
+  &.active span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+  
+  &.active span:nth-child(5) {
+    left: 2.5px;
+    top: 14.5px;
+  }
+  
+  &.active span:nth-child(6) {
+    left: calc(50% - 2.5px);
+    top: 14.5px;
+  }
+}
+
+  &__list {
+    @include md-min {
+    @include unlist (0 -10px 0);
+  display: grid;
+  justify-content: end;
+  gap: $gap;
+  grid-template-columns: repeat(auto-fit, minmax(2em, max-content));
+  }
+  @include md {
+    display: none;
+    @include unlist;
+    background-color: rgba($color-gray-dark, 0.9);
+    text-align: right;
+    position: absolute;
+    top: 100px;
+    @include box-shadow;
+  }
+  
+}
+
+&__item {
+  @include md {
+    margin: $gap $gap-sm;
+  }
+}
+
+&__link {
+  display: block;
+  @include md-min {
+      margin: $gap $gap-sm;
+
+    }
+    @include md {
+      margin: $gap-sm $gap;
+    }
+
+    transition: color 0.5s;
+
+    font-size: 1.125rem;
+    &:hover,
+    &:focus {
+      color: #d66926;
+    }
+  }
+}
