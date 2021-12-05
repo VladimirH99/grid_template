@@ -7,39 +7,123 @@
     align-items: center;
     width: 100%;
     background-color: $color-gray-light;
-    padding-left: 15.6%;
-    padding-right: 15.6%;
-    padding-top: 110px;
-    padding-bottom: 110px;
+
+    @include lg-min {
+        padding-left: 15.6%;
+        padding-right: 15.6%;
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+    @include lg-md {
+        padding-left: 20px;
+        padding-right: 35px;
+        padding-top: 90px;
+        padding-bottom: 65px;
+    }
+    @include md-sm{
+        padding-left: 20px;
+    }
+    @include sm {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-top: 45px;
+        padding-bottom: 65px;
+    }
 
     &__img {
+        position: relative;
+        @include lg-min {
         padding-left: 45px;
         margin-top: $margin-top;
+        }
+        @include lg-md {
+            padding-left: 55px;
+        }
+        @include md-sm {
+            padding-left: 55px;
+            padding-right: 20px;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+        @include sm {
+            display: block;
+            text-align: center;
+            padding-top: 50px; 
+        }
      }
 
     &__line {
+        height: 200px;
         border: 0.5px solid #707070;
         background-color: #707070;
-        height: 200px;
-        margin-top: $margin-top;
+        @include sm {
+            display: none;
+        }
+    }
+    &__descr-main {
+        margin-top: 20px;
+        margin-bottom: 60px;
+        @include lg-sm {
+            margin-bottom: 45px;
+            }
+            @include sm {
+                margin-top: 20px;
+            }
     }
 }
 
 h2 {
-font-size: 2.5rem;
-letter-spacing: 4px;
-width: 400px;
-color: $color-primary;
-font-family: $font-header;
-margin-bottom: 55px;
+    color: $color-primary;
+        font-family: $font-header;
+        margin: 0;
+
+        @include lg-min {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+        width: 400px;
+        }
+
+        @include lg-md {
+            font-size: 2rem;
+            letter-spacing: 3px;
+            width: 400px;
+            }
+         @include md-sm {
+                font-size: 1.5rem;
+            letter-spacing: 2px;
+            width: 250px;
+            }
+        @include sm {
+                font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-align: center;
+            }
 }
 
 p {
-font-size: 1.125rem;
-letter-spacing: 1px;
 color: #637588;
 font-family: $font-main;
+letter-spacing: 1px;
+font-size: 1.125rem;
 padding-right: 45px;
 margin: 0;
 line-height: 24px;
+@include md-sm {
+    font-size: 1rem;
+    padding-right: 25px;
+}
+
+}
+.md-hidden-text {
+    @include lg-sm {
+        display: none;
+    }
+    @include sm {
+        display: none;
+    }
+}
+.sm-hidden-text {
+    @include md-sm {
+        display: none; 
+    }
 }
