@@ -5,23 +5,17 @@
     display: flex;
     justify-content: center;
     padding: 30px;
+    padding-left: 310px;
+    padding-right: 310px;
     background-color: $color-primary;
     width: 100%;
     font-size: 1.125rem;
     
 }
-// .form__main {
-//     background-color: $color-primary;
-//     padding-right: 5px;
-//     border-style: none;
-//     font-size: 1.125rem;
-//     text-decoration: white;
-    
-// }
 
 .form__item {
     color: white;
-    padding-left: 25px;
+    padding-left: 35px;
     font-family: $font-main;
     height: 60px;
     width: 420px;
@@ -29,17 +23,21 @@
     border-style: none;
     border-bottom: 2px solid $color-light;
     letter-spacing: 2px;
-    background-color: lighten($color: #2d3651, $amount: 5);
+    background-color: rgba(255, 255, 255, 0.05);
+    &::-webkit-input-placeholder {
+        color: rgb(255, 255, 255);
+       }
 }
 
 .form__button {
     padding: 20px;
+    margin-right: 0;
     text-align: center;
     border: 2px solid rgba($color: #00000000, $alpha: 0);
     border-bottom: 2px solid #e5e5e5;
     height: 60px;
     width: 420px;
-    background-color: lighten($color: #2d3651, $amount: 10);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: 0.5s;
 }
 .form__button:hover, .form__button:focus {
