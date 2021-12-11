@@ -28,9 +28,14 @@
     border-bottom: 2px solid $color-light;
     letter-spacing: 2px;
     background-color: rgba(255, 255, 255, 0.05);
-    &::-webkit-input-placeholder {
-        color: $color-light;
-       }
+    transition: 0.5s;
+    
+}
+.form__item:hover, .form__item:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    &[placeholder]::-webkit-input-placeholder {
+    color: white;
+    }
 }
 
 .form__button {
