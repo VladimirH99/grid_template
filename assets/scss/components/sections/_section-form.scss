@@ -4,31 +4,74 @@
 .form {
     display: flex;
     justify-content: center;
-    padding: 30px;
-    padding-left: 16.145%;
-    padding-right: 16.145%;
     background-color: $color-primary;
     width: 100%;
+    
     font-size: 1.125rem;
+    @include lg-min {
+        padding: 30px;
+        padding-left: 16.145%;
+        padding-right: 16.145%;
+    }
+    @include lg-md {
+        padding: 20px; 
+    }
+    @include md-sm {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 20px; 
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
     
 }
 .form__main {
     width: 66.6%;
     display: flex;
+    @include md-sm {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .form__item {
-    color: white;
-    padding-left: 35px;
     font-family: $font-main;
     height: 60px;
-    width: calc(66.6% - 70px);
-    margin-right: 20px;
     border-style: none;
     border-bottom: 2px solid $color-light;
     letter-spacing: 2px;
     background-color: rgba(255, 255, 255, 0.05);
     transition: 0.5s;
+    @include lg-min {
+        width: calc(66.6% - 70px);
+        margin-right: 20px;
+        padding-left: 35px;
+    }
+    @include lg-md {
+        width: calc(66.6% - 70px);
+        margin-right: 20px;
+        padding-left: 35px;
+    }
+
+    @include md-sm {
+        padding-left: 20px;
+    }
+    @include sm {
+        width: 100%;
+        margin-bottom: 20px;
+    }
     
 }
 .form__item:hover, .form__item:focus {
@@ -37,17 +80,39 @@
     color: white;
     }
 }
+.form__item--name {
+    @include md-sm {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.form__item--email {
+    @include md-sm {
+        width: 51%;
+        margin-right: 20px;
+    }
+}
+
 
 .form__button {
+    width: 33.33%;
     padding: 20px;
     margin-right: 0;
     text-align: center;
     border: 2px solid rgba($color: #00000000, $alpha: 0);
     border-bottom: 2px solid $color-light;
     height: 60px;
-    width: 33.33%;
     background-color: rgba(255, 255, 255, 0.1);
     transition: 0.5s;
+    @include md-sm {
+    position: absolute;
+    margin-right: calc(100% - 151.4vw);
+    width: 43%;
+    padding: 20px;
+    }
+    @include sm {
+        width: 100%;
+    }
 }
 .form__button:hover, .form__button:focus {
     background-color: $color-accent;
