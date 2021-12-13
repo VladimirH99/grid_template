@@ -9,8 +9,8 @@
     background-color: $color-gray-light;
 
     @include lg-min {
-        padding-left: 310px;
-        padding-right: 310px;
+        padding-left: 16.145vw;
+        padding-right: 16.145vw;
         padding-top: 65px;
         padding-bottom: 65px;
     }
@@ -70,50 +70,48 @@
                 margin-top: 20px;
             }
     }
-}
-
-h2 {
-    color: $color-primary;
-        font-family: $font-header;
-        margin: 0;
-
-        @include lg-min {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
-        width: 400px;
-        }
-
-        @include lg-md {
-            font-size: 2rem;
-            letter-spacing: 3px;
+    &__title {
+        color: $color-primary;
+            font-family: $font-header;
+            margin: 0;
+    
+            @include lg-min {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
             width: 400px;
             }
-         @include md-sm {
-                font-size: 1.5rem;
-            letter-spacing: 2px;
-            width: 250px;
-            }
-        @include sm {
-                font-size: 1.5rem;
-            letter-spacing: 2px;
-            text-align: center;
-            }
+    
+            @include lg-md {
+                font-size: 2rem;
+                letter-spacing: 3px;
+                width: 400px;
+                }
+             @include md-sm {
+                    font-size: 1.5rem;
+                letter-spacing: 2px;
+                width: 250px;
+                }
+            @include sm {
+                    font-size: 1.5rem;
+                letter-spacing: 2px;
+                text-align: center;
+                }
+    }
+    &__text {
+        color: #637588;
+        font-family: $font-main;
+        letter-spacing: 1px;
+        font-size: 1.125rem;
+        padding-right: 45px;
+        margin: 0;
+        line-height: 24px;
+        @include md-sm {
+            font-size: 1rem;
+            padding-right: 25px;
+        }
+    }
 }
 
-p {
-color: #637588;
-font-family: $font-main;
-letter-spacing: 1px;
-font-size: 1.125rem;
-padding-right: 45px;
-margin: 0;
-line-height: 24px;
-@include md-sm {
-    font-size: 1rem;
-    padding-right: 25px;
-}
-
-}
 .md-hidden-text {
     @include lg-sm {
         display: none;
