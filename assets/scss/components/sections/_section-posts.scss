@@ -2,62 +2,101 @@
 @use "../../mixins" as *;
 
 .posts {
-    padding-left: 16.145vw;
-    padding-right: 16.145vw;
+  padding-left: 20px;
+  padding-right: 20px;
+@include lg-min {
+  padding-left: 16.145vw;
+  padding-right: 16.145vw;
 }
-
-.posts-article {
-    position: relative;
-    min-height: 550px;
-    text-align: center;
-    background-color:  #eee;
-}
-
-.posts-article__image {
+&-article {
+  min-height: 300px;
+  text-align: center;
+  background-color:  #eee;
+  &__image {
     height: 300px;
     background-color: $color-light;
     background-position: center;
     background-size: cover;
-}
-.posts-article__title {
-  margin: 0, 37px, 15px;
-  font-family: $font-header;
-  font-size: 1.125rem;
-  font-weight: bolder;
-  letter-spacing: 1px;
-  text-align: center;
-  color: $color-gray;
-}
-.posts-article__description {
+  }
+  &__title {
+    margin: 0, 37px, 15px;
+    font-family: $font-header;
+    font-size: 1.125rem;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-align: center;
+    color: $color-gray;
+  }
+  &__description {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 250px;
     padding: 5.67%;
-
+    @include lg-md {
+      padding: 25px;
+    }
+  }
+  &__text {
+    font-size: $font-size;
+    letter-spacing: 0px;
+    color: $color-gray;
+    }
 }
-.posts-article__text {
-font-size: $font-size;
-line-height: 1.25;
-color: $color-gray;
-}
-
-.posts__maintitle {
-  height: 53px;
-  margin: 99px 0 54px;
+&__maintitle {
   font-family: $font-main;
-  font-size: 2.5rem;
   font-weight: bold;
-  letter-spacing: 4px;
   color: $color-primary;
+  @include lg-min {
+    margin: 99px 0 54px;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+  @include lg-md {
+    margin: 80px 0 60px;
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+  @include md-sm {
+    margin: 55px 0 40px;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+  @include sm {
+    margin: 55px 0 45px;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
 }
-
-
-.posts-container {
-    display: grid;
+&-container {
+  display: grid;
+  gap: $gap;
+  margin-bottom: $gap;
+  @include lg-min {
     grid-template-areas: "b1 b1 b2 b3" "b4 b5 b6 b6";
-    gap: $gap;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @include lg-md {
+    grid-template-areas: "b1 b1 b2" "b3 b4 b4" " b5 b5 b6";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include md-sm {
+    grid-template-areas: "b1 b2" "b3 b4" "b5 b6";
+    grid-template-columns: 1fr 1fr;
+  }
+  @include sm {
+    grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
+  }
+}
+&-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 60px;
+}
 }
 
 @for $i from 1 through 6 {
@@ -65,6 +104,7 @@ color: $color-gray;
       grid-area: b#{$i};
     }
 }
+
 
 
 
