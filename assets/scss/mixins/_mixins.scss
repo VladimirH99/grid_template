@@ -27,7 +27,7 @@
 
 @mixin block-header {
   margin: 0;
-  padding-bottom: $gap-sm;
+  padding-bottom: 10px;
 
   border-bottom: 1px solid $color-dark;
 }
@@ -62,5 +62,5 @@
 }
 
 @mixin box-shadow {
-  box-shadow: -3px 3px $gap -10px darken($color-gray-dark, 40%);
+  box-shadow: -3px 3px 20px -10px darken($color-gray-dark, 40%);
 }

@@ -2,111 +2,100 @@
 @use "../../mixins" as *;
 
 .posts {
-  padding-left: 20px;
-  padding-right: 20px;
-@include lg-min {
-  padding-left: 16.145vw;
-  padding-right: 16.145vw;
-}
-&-article {
-  min-height: 300px;
-  text-align: center;
-  background-color:  #eee;
-  &__image {
-    height: 300px;
-    background-color: $color-light;
-    background-position: center;
-    background-size: cover;
+  @extend %section;
+
+  &__container {
+    @extend %container;
   }
-  &__title {
-    margin: 0, 37px, 15px;
-    font-family: $font-header;
-    font-size: 1.125rem;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    text-align: center;
-    color: $color-gray;
-  }
-  &__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 250px;
-    padding: 5.67%;
+
+  &__grid {
+    display: grid;
+    padding-bottom: $gap;
+    gap: $gap;
+    @include lg-min {
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+      grid-template-columns: repeat(4, 1fr);
+    }
     @include lg-md {
-      padding: 25px;
+      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+      grid-template-columns: 1fr 1fr;
+    }
+    @include sm {
+      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+      grid-template-columns: 1fr;
     }
   }
-  &__text {
-    font-size: $font-size;
-    letter-spacing: 0px;
-    color: $color-gray;
+
+  &__actions {
+    @extend %btn-container;
+  }
+}
+
+.post-item {
+  transition: background-color 0.5s;
+  background-color: lighten($color-gray-light, 5%);
+
+  &:hover {
+    background-color: darken($color-gray-light, 5%);
+    .post-item__image img {
+      transform: scale(1.1);
     }
-}
-&__maintitle {
-  font-family: $font-main;
-  font-weight: bold;
-  color: $color-primary;
-  @include lg-min {
-    margin: 99px 0 54px;
-    font-size: 2.5rem;
-    letter-spacing: 4px;
+    h3 {
+      color: $color-primary;
+    }
+    p {
+      color: $color-primary;
+    }
   }
-  @include lg-md {
-    margin: 80px 0 60px;
-    font-size: 2rem;
-    letter-spacing: 3px;
+
+  &__link {
+    display: grid;
+    overflow: hidden;
+    height: 100%;
+    grid-template-rows: 300px 1fr;
   }
-  @include md-sm {
-    margin: 55px 0 40px;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+
+  &__image {
+    display: flex;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+    background-color: $color-primary;
+
+    img {
+      width: 100%;
+      transition: transform 0.5s;
+      object-fit: cover;
+    }
   }
-  @include sm {
-    margin: 55px 0 45px;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+
+  &__description {
+    display: grid;
+    align-content: center;
+    padding: $gap;
+
+    h3 {
+      transition: color 0.5s;
+      text-align: center;
+
+      font-family: $font-header;
+    }
+
+    p {
+      transition: color 0.5s;
+      text-align: center;
+    }
   }
-}
-&-container {
-  display: grid;
-  gap: $gap;
-  margin-bottom: $gap;
-  @include lg-min {
-    grid-template-areas: "b1 b1 b2 b3" "b4 b5 b6 b6";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  @include lg-md {
-    grid-template-areas: "b1 b1 b2" "b3 b4 b4" " b5 b5 b6";
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @include md-sm {
-    grid-template-areas: "b1 b2" "b3 b4" "b5 b6";
-    grid-template-columns: 1fr 1fr;
-  }
-  @include sm {
-    grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
-  }
-}
-&-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 60px;
-}
 }
 
 @for $i from 1 through 6 {
-    .posts-article:nth-of-type(#{$i}) {
-      grid-area: b#{$i};
-    }
-}
-
-
-
+  .post-item:nth-of-type(#{$i}) {
+    grid-area: p#{$i};
+  }}
 
 
 

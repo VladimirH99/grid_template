@@ -1,50 +1,50 @@
 @use "../presets" as *;
 @use "../mixins" as *;
+
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 1em;
-  padding-left: 1em;
-  transition: background-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s;
   letter-spacing: 0.1em;
-  border: 2px solid $color-light;
-  background-color: rgba($color-light, 0.1);
-  color: $color-light;
-  
-  @include lg-min {
-    font-size: 1.125rem;
-  }
-  &--light {
-    @include lg-min {
-      width: 250px;
-      height: 60px;
-    }
+  border-width: 2px;
+  border-style: solid;
 
-    @include lg-md {
-      width: 200px;
-      height: 50px;
-      }
-    @include lg {
-        width: 170px;
-        height: 40px;
-      }
-    }
-    
-  &--primary {
-    height: 60px;
-    @include sm-min {
-      width: 350px;
-    }
-    @include sm {
-      width: 100%;
-    }
-    border: 2px solid $color-primary;
-    background-color: rgba($color-primary, 0.8);
-  }
   &:hover,
   &:focus {
     background-color: $color-accent;
   }
 }
 
+.btn--light {
+  border-color: $color-light;
+  background-color: rgba($color-light, 0.1);
+
+  @include lg-min {
+    min-width: 250px;
+    height: 60px;
+    font-size: 1.125rem;
+  }
+  @include lg-md {
+    min-width: 200px;
+    height: 50px;
+  }
+  @include sm {
+    min-width: 170px;
+    height: 40px;
+  }
+}
+
+.btn--primary {
+  font-size: 1.125rem;
+  height: 60px;
+  border-color: $color-primary;
+  background-color: rgba($color-primary, 0.8);
+
+  @include sm-min {
+    width: 350px;
+  }
+  @include sm {
+    width: 100%;
+  }
+}
