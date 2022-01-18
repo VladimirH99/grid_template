@@ -1233,6 +1233,7 @@ input:focus {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
+    letter-spacing: 0.1em;
   }
 
   .header-navbar__list {
