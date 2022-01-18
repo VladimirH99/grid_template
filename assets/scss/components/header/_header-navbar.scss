@@ -1,6 +1,7 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 .header-navbar {
+  letter-spacing: 0.1em;
   @include md {
     display: flex;
     justify-content: flex-end;
