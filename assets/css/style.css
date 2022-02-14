@@ -759,14 +759,14 @@ input:focus {
   -o-object-fit: cover;
   object-fit: cover;
 }
-.post-item__caption {
+.post-item__description {
   display: grid;
   -ms-flex-line-pack: center;
   align-content: center;
 
   padding: 20px;
 }
-.post-item__caption h3 {
+.post-item__description h3 {
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
   transition: color 0.5s;
@@ -774,7 +774,7 @@ input:focus {
 
   font-family: "Roboto Slab", serif;
 }
-.post-item__caption p {
+.post-item__description p {
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
   transition: color 0.5s;
